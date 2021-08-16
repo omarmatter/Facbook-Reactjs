@@ -7,6 +7,13 @@ import { useState } from "react";
 
 export default function Post({post}) {
   const [like, setLike] = useState(post.like);
+  const [isLiked, setIsLiked] = useState(false);
+
+ const  likeHandler=()=>{
+    setLike(isLiked ? like-1 : like+1);
+    setIsLiked(!isLiked);
+
+  }
   return (
     <div className="post">
       <div className="postWrapper">
@@ -30,12 +37,13 @@ export default function Post({post}) {
         </div>
         <div className="postBottom">
           <div className="postBottomLeft">
-            <img className="likeIcon" src="/assets/like.png" alt="" srcset="" />
+            <img className="likeIcon" src="/assets/like.png" onClick={likeHandler}  alt="" srcset="" />
             <img
               className="heartIcon"
               src="/assets/heart.png"
               alt=""
               srcset=""
+              onClick={likeHandler}
             />
             <sapn className="likeCounter">{like} people liked it </sapn>
           </div>
