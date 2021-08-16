@@ -31,11 +31,11 @@ export default function Rightbar({profile}) {
             <div className="rightbarInfo">
               <div className="rightbarInfoItem">
                 <span className="rightbarInfoKey">City:</span>
-                <span className="rightbarInfoValue">New York</span>
+                <span className="rightbarInfoValue">Gaza</span>
               </div>
               <div className="rightbarInfoItem">
                 <span className="rightbarInfoKey">From:</span>
-                <span className="rightbarInfoValue">Madrid</span>
+                <span className="rightbarInfoValue">Palestaine</span>
               </div>
               <div className="rightbarInfoItem">
                 <span className="rightbarInfoKey">Relationship:</span>
@@ -100,7 +100,8 @@ export default function Rightbar({profile}) {
     return (
         <div className='rightbar'>
             <div className="rightbarWrapper">
-              <ProfileRightbar/>
+            {profile ? <ProfileRightbar /> : <HomeRightbar />}
+
             </div>
         </div>
     )

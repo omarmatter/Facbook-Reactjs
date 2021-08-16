@@ -2,6 +2,7 @@ import { Chat, Notifications, Person, Search } from '@material-ui/icons'
 import './topbar.css'
 
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default function Topbar() {
     return (
@@ -17,7 +18,7 @@ export default function Topbar() {
         </div>
         <div className="topbarRight">
             <div className="topbarLinks">
-                <span className="topbarLink">Home</span>
+            <Link to="/Home" ><span className="topbarLink">Home</span></Link>
                 <span className="topbarLink">Time</span>
 
             </div>
@@ -36,7 +37,9 @@ export default function Topbar() {
                 </div>
          
             </div>
+            <Link to="/Profile" >
             <img src="/assets/person/1.jpeg" alt="" className="topbarImage"/>
+            </Link>
         </div>
         </div>
     )
