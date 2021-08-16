@@ -1,5 +1,7 @@
 import { Bookmark, Chat, Event, Group, HelpOutline, PlayCircleFilledOutlined, RssFeed, School, WorkOutline } from '@material-ui/icons'
 import React from 'react'
+import { Users } from '../../dunmicData'
+import CloseFriend from '../CloseFriend/CloseFriend'
 import './sidebar.css'
 export default function Sidebar() {
     return (
@@ -46,76 +48,10 @@ export default function Sidebar() {
                 <button className="sidebarButton">Show More</button>
                     <hr className="sidebarHr" />
                     <ul className="sidebarFriendList">
-                      <li className="sidebarFriend">
-                          <img src="/assets/person/2.jpeg"   alt="" className='sidebarImg'  />
-                          <span className="sidebarFriendName">Omar Matter</span>
-                      </li>
-                      <li className="sidebarFriend">
-                          <img src="/assets/person/2.jpeg"   alt="" className='sidebarImg'  />
-                          <span className="sidebarFriendName">Omar Matter</span>
-                      </li>
-                      <li className="sidebarFriend">
-                          <img src="/assets/person/2.jpeg"   alt="" className='sidebarImg'  />
-                          <span className="sidebarFriendName">Omar Matter</span>
-                      </li>
-                      <li className="sidebarFriend">
-                          <img src="/assets/person/2.jpeg"   alt="" className='sidebarImg'  />
-                          <span className="sidebarFriendName">Omar Matter</span>
-                      </li>
-                      <li className="sidebarFriend">
-                          <img src="/assets/person/2.jpeg"   alt="" className='sidebarImg'  />
-                          <span className="sidebarFriendName">Omar Matter</span>
-                      </li>
-                      <li className="sidebarFriend">
-                          <img src="/assets/person/2.jpeg"   alt="" className='sidebarImg'  />
-                          <span className="sidebarFriendName">Omar Matter</span>
-                      </li>
-                      <li className="sidebarFriend">
-                          <img src="/assets/person/2.jpeg"   alt="" className='sidebarImg'  />
-                          <span className="sidebarFriendName">Omar Matter</span>
-                      </li>
-                      <li className="sidebarFriend">
-                          <img src="/assets/person/2.jpeg"   alt="" className='sidebarImg'  />
-                          <span className="sidebarFriendName">Omar Matter</span>
-                      </li>
-                      <li className="sidebarFriend">
-                          <img src="/assets/person/2.jpeg"   alt="" className='sidebarImg'  />
-                          <span className="sidebarFriendName">Omar Matter</span>
-                      </li>
-                      <li className="sidebarFriend">
-                          <img src="/assets/person/2.jpeg"   alt="" className='sidebarImg'  />
-                          <span className="sidebarFriendName">Omar Matter</span>
-                      </li><li className="sidebarFriend">
-                          <img src="/assets/person/2.jpeg"   alt="" className='sidebarImg'  />
-                          <span className="sidebarFriendName">Omar Matter</span>
-                      </li><li className="sidebarFriend">
-                          <img src="/assets/person/2.jpeg"   alt="" className='sidebarImg'  />
-                          <span className="sidebarFriendName">Omar Matter</span>
-                      </li><li className="sidebarFriend">
-                          <img src="/assets/person/2.jpeg"   alt="" className='sidebarImg'  />
-                          <span className="sidebarFriendName">Omar Matter</span>
-                      </li>
-                      <li className="sidebarFriend">
-                          <img src="/assets/person/2.jpeg"   alt="" className='sidebarImg'  />
-                          <span className="sidebarFriendName">Omar Matter</span>
-                      </li><li className="sidebarFriend">
-                          <img src="/assets/person/2.jpeg"   alt="" className='sidebarImg'  />
-                          <span className="sidebarFriendName">Omar Matter</span>
-                      </li><li className="sidebarFriend">
-                          <img src="/assets/person/2.jpeg"   alt="" className='sidebarImg'  />
-                          <span className="sidebarFriendName">Omar Matter</span>
-                      </li><li className="sidebarFriend">
-                          <img src="/assets/person/2.jpeg"   alt="" className='sidebarImg'  />
-                          <span className="sidebarFriendName">Omar Matter</span>
-                      </li><li className="sidebarFriend">
-                          <img src="/assets/person/2.jpeg"   alt="" className='sidebarImg'  />
-                          <span className="sidebarFriendName">Omar Matter</span>
-                      </li><li className="sidebarFriend">
-                          <img src="/assets/person/2.jpeg"   alt="" className='sidebarImg'  />
-                          <span className="sidebarFriendName">Omar Matter</span>
-                      </li>
-                 
-                 
+                        {Users.map(u=>(
+                            <CloseFriend key={u.id}  user={u}/>
+                        ))}
+                
                     </ul>
             </div>
         </div>

@@ -2,9 +2,11 @@ import { MoreVert } from "@material-ui/icons";
 import React from "react";
 import "./post.css";
 import {Users} from "../../dunmicData";
+import { useState } from "react";
 
 
 export default function Post({post}) {
+  const [like, setLike] = useState(post.like);
   return (
     <div className="post">
       <div className="postWrapper">
@@ -35,7 +37,7 @@ export default function Post({post}) {
               alt=""
               srcset=""
             />
-            <sapn className="likeCounter">{post.like} people liked it </sapn>
+            <sapn className="likeCounter">{like} people liked it </sapn>
           </div>
           <div className="postBottomRight">
             <span className="postCommentText">{post.comment} comments</span>
