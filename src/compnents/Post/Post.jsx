@@ -1,8 +1,10 @@
 import { MoreVert } from "@material-ui/icons";
 import React from "react";
 import "./post.css";
+import {Users} from "../../dunmicData";
 
-export default function Post() {
+
+export default function Post({post}) {
   return (
     <div className="post">
       <div className="postWrapper">
@@ -10,19 +12,19 @@ export default function Post() {
           <div className="postLeft">
             <img
               className="postProfileImg"
-              src="/assets/person/1.jpeg"
+              src={Users.filter((u)=>u.id === post.userId)[0].profilePicture }
               alt=""
             />
-            <span className="postUsername">Omar Matter</span>
-            <span className="postDate">5 mins ago</span>
+            <span className="postUsername">{Users.filter((u)=>u.id === post.userId)[0].username }</span>
+            <span className="postDate">{post.date}</span>
           </div>
           <div className="postRight">
             <MoreVert />
           </div>
         </div>
         <div className="postCenter">
-          <span className="PostText">Hey It's my First Post</span>
-          <img className="postImg" src="/assets/post/1.jpeg" alt="" srcset="" />
+          <span className="PostText">{post?.desc}</span>
+          <img className="postImg" src={post.photo} alt="" srcset="" />
         </div>
         <div className="postBottom">
           <div className="postBottomLeft">
@@ -33,10 +35,10 @@ export default function Post() {
               alt=""
               srcset=""
             />
-            <sapn className="likeCounter">32 people liked it </sapn>
+            <sapn className="likeCounter">{post.like} people liked it </sapn>
           </div>
           <div className="postBottomRight">
-            <span className="postCommentText">9 comments</span>
+            <span className="postCommentText">{post.comment} comments</span>
           </div>
         </div>
       </div>
